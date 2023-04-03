@@ -36,12 +36,13 @@ function mioElemento(){
         quadratino1.addEventListener(`click`, function(){
             //con this targettizzo l'elemento che voglio(credo)
             
-            if(!bombs.includes(parseInt(this.innerText))){
+            if(!bombs100.includes(parseInt(this.innerText))){
                 
                 this.classList.toggle("different-color")     
                 console.log(parseInt(this.innerText))
             }else{
                 this.innerHTML = `<i class="fa-solid fa-bomb fa-beat-fade" style="color: #cb2525;"></i>`
+                destination1.innerHTML 
             }
         })
         //visualizzo il mio elemtno in pagina
@@ -80,8 +81,14 @@ function mioElemento2(){
         //al click del mio quadratino tolgo o aggiungo la classe che cambia di colore
         quadratino2.addEventListener(`click`, function(){
             //con this targettizzo l'elemento che voglio(credo)
-            this.classList.toggle("different-color")     
-            console.log(parseInt(this.innerText))
+            if(!bombs81.includes(parseInt(this.innerText))){
+                
+                this.classList.toggle("different-color")     
+                console.log(parseInt(this.innerText))
+            }else{
+                this.innerHTML = `<i class="fa-solid fa-bomb fa-beat-fade" style="color: #cb2525;"></i>`
+                destination2.innerHTML 
+            }
         })
         //visualizzo il mio elemtno in pagina
         destination2.append(quadratino2)
@@ -111,8 +118,14 @@ function mioElemento3(){
         //al click del mio quadratino tolgo o aggiungo la classe che cambia di colore
         quadratino3.addEventListener(`click`, function(){
             //con this targettizzo l'elemento che voglio(credo)
-            this.classList.toggle("different-color")     
-            console.log(parseInt(this.innerText))
+            if(!bombs49.includes(parseInt(this.innerText))){
+                
+                this.classList.toggle("different-color")     
+                console.log(parseInt(this.innerText))
+            }else{
+                this.innerHTML = `<i class="fa-solid fa-bomb fa-beat-fade" style="color: #cb2525;"></i>`
+                destination3.innerHTML 
+            }
         })
         //visualizzo il mio elemtno in pagina
         destination3.append(quadratino3)
@@ -139,22 +152,25 @@ button.addEventListener(`click`, function(){
 
     if(option == 1){
         destination1.classList.remove("display-none")
+        console.log(bombs100)
     }else if(option == 2){
         destination2.classList.remove("display-none")
+        console.log(bombs81)
     }else{
         destination3.classList.remove("display-none")
+        console.log(bombs49)
     }
 
-    console.log(bombs)
+    
 })
 
 //creazione funzione che cre un numero random
-function numeroRandom(){
+function numeroRandom(max, min){
     const array = []
     
     r = 1; 
     while (array.length < 16){
-        let random = Math.floor(Math.random() * 100) + 1
+        let random = Math.floor(Math.random() * max) + min
         if(!array.includes(random)){
            array.push(random) 
         }
@@ -163,5 +179,6 @@ function numeroRandom(){
     }
     return array
 }
-let bombs = numeroRandom()
-
+let bombs100 = numeroRandom(100, 1)
+let bombs81 = numeroRandom(81, 1)
+let bombs49 = numeroRandom(49, 1)
