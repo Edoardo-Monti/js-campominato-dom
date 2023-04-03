@@ -17,6 +17,7 @@ Aggiungere una select accanto al bottone di generazione, che fornisca una scelta
 */
 
 let destination1 = document.querySelector(".griglia1")
+let punteggio = 0;
 let quadratino1
 function mioElemento(){
     //variabile che indica la destinazion nell'html
@@ -35,14 +36,17 @@ function mioElemento(){
         //al click del mio quadratino tolgo o aggiungo la classe che cambia di colore
         quadratino1.addEventListener(`click`, function(){
             //con this targettizzo l'elemento che voglio(credo)
-            
+           
+
             if(!bombs100.includes(parseInt(this.innerText))){
                 
-                this.classList.toggle("different-color")     
+                this.classList.add("different-color")  
+                punteggio++   
                 console.log(parseInt(this.innerText))
             }else{
                 this.innerHTML = `<i class="fa-solid fa-bomb fa-beat-fade" style="color: #cb2525;"></i>`
-                destination1.innerHTML 
+                
+                destination1.innerHTML += `....Hai perso.... il tuo punteggio è: ${punteggio}`
             }
         })
         //visualizzo il mio elemtno in pagina
@@ -52,11 +56,6 @@ function mioElemento(){
 }
 
 mioElemento()
-
-
-// console.log(quadratino)
-
-
 
 
 
@@ -83,11 +82,12 @@ function mioElemento2(){
             //con this targettizzo l'elemento che voglio(credo)
             if(!bombs81.includes(parseInt(this.innerText))){
                 
-                this.classList.toggle("different-color")     
+                this.classList.add("different-color")    
+                punteggio++ 
                 console.log(parseInt(this.innerText))
             }else{
                 this.innerHTML = `<i class="fa-solid fa-bomb fa-beat-fade" style="color: #cb2525;"></i>`
-                destination2.innerHTML 
+                destination2.innerHTML += `....Hai perso....il tuo punteggio è: ${punteggio}`
             }
         })
         //visualizzo il mio elemtno in pagina
@@ -120,11 +120,12 @@ function mioElemento3(){
             //con this targettizzo l'elemento che voglio(credo)
             if(!bombs49.includes(parseInt(this.innerText))){
                 
-                this.classList.toggle("different-color")     
+                this.classList.add("different-color") 
+                punteggio++    
                 console.log(parseInt(this.innerText))
             }else{
                 this.innerHTML = `<i class="fa-solid fa-bomb fa-beat-fade" style="color: #cb2525;"></i>`
-                destination3.innerHTML 
+                destination3.innerHTML += `....Hai perso.... il tuo punteggio è: ${punteggio}`
             }
         })
         //visualizzo il mio elemtno in pagina
