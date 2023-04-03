@@ -35,12 +35,13 @@ function mioElemento(){
         //al click del mio quadratino tolgo o aggiungo la classe che cambia di colore
         quadratino1.addEventListener(`click`, function(){
             //con this targettizzo l'elemento che voglio(credo)
-            this.classList.toggle("different-color")     
-            console.log(parseInt(this.innerText))
-            if(random.includes(numeroRandom())){
-                let bomb
-                bomb.innerHTML = `<i class="fa-solid fa-bomb fa-beat-fade" style="color: #cb2525;"></i>`
-                quadratino1.append(bomb)
+            
+            if(!bombs.includes(parseInt(this.innerText))){
+                
+                this.classList.toggle("different-color")     
+                console.log(parseInt(this.innerText))
+            }else{
+                this.innerHTML = `<i class="fa-solid fa-bomb fa-beat-fade" style="color: #cb2525;"></i>`
             }
         })
         //visualizzo il mio elemtno in pagina
@@ -144,6 +145,7 @@ button.addEventListener(`click`, function(){
         destination3.classList.remove("display-none")
     }
 
+    console.log(bombs)
 })
 
 //creazione funzione che cre un numero random
@@ -161,5 +163,5 @@ function numeroRandom(){
     }
     return array
 }
-console.log(numeroRandom())
+let bombs = numeroRandom()
 
