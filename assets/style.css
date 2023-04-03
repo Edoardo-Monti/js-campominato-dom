@@ -1,0 +1,85 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 80px;
+    /* border: 1px solid blue; */
+}
+
+.container{
+    
+    height: calc(100vh - 130px);
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.griglia1, .griglia2, .griglia3 {
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 400px;
+}
+
+.box{
+    border: 1px solid black;
+    width: calc(100% / 10);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    box-shadow:5px 5px 30px inset;
+    cursor: pointer;
+    aspect-ratio: 1
+}
+
+.box2{
+    border: 1px solid black;
+    width: calc(100% / 9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    box-shadow:5px 5px 30px inset;
+    cursor: pointer;
+    aspect-ratio: 1
+}
+
+.box3{
+    /* border: 1px solid black; */
+    width: calc(100% / 7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    box-shadow:5px 5px 30px inset;
+    cursor: pointer;
+    aspect-ratio: 1
+}
+
+.footer{
+    height: 50px;
+    /* border: 1px solid blue; */
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.different-color{
+    background-color: white;
+    box-shadow: none;
+}
+
+.display-none{
+    display: none;
+}
